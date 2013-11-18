@@ -1,7 +1,7 @@
-/*
-  Dr. Mark E. Lehr
-  November 18th, 2013
-*/
+/*Bryan Martinez
+  11/12/13
+  Purpose: To mess with Array's
+  */
 
 //Libraries
 #include <cstdlib>
@@ -9,7 +9,7 @@
 #include <ctime>
 using namespace std;
 
-//No Global Constants
+//Global Constants-> none
 
 //Function Prototypes
 void fillAry(int [],int);
@@ -33,7 +33,7 @@ int main(int argc, char *argv[]){
     int sizeOf=delVal(array,SIZE,50,-1);
     cout<<"Size of the array = "
         <<sizeOf<<endl;
-    sizeOf=delVal(array,sizeOf,60,-1); 
+    sizeOf=delVal(array,sizeOf,60,-1);
     cout<<"Size of the array = "
         <<sizeOf<<endl;
     cout<<"Found 25 "
@@ -61,11 +61,11 @@ int  replce(int a[],int n,int vf,int vr){
 int  delVal(int a[],int n,int value,int vInsrt){
     //Find and delete
     int posFnd=0;
-    do{ 
+    do{
         posFnd=find(a,posFnd,n-1,value);
         if(posFnd>0)shift(a,posFnd,n,vInsrt);
     }while(posFnd>0);
-    
+
     //Size of the array
     return szOf(a,n,vInsrt);
 }
@@ -82,7 +82,7 @@ void shift(int a[],int pos,int end,int value){
      for(int i=pos;i<end-1;i++){
              a[i]=a[i+1];
      }
-     //Replace last position with empty value 
+     //Replace last position with empty value
      a[end-1]=value;
 }
 
@@ -111,7 +111,7 @@ void fillAry(int a[],int n){
      for(int i=0;i<n;i++){
              a[i]=rand()%90+10;
      }
-}     
+}
 
 
 
