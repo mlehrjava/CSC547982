@@ -21,7 +21,8 @@ int  delVal(int [],int,int,int);
 int  replce(int [],int,int,int);
 
 int main(int argc, char *argv[]){
-    //Declare and initialize variables
+    cout<<"Hello user\n";	
+	//Declare and initialize variables
     srand(static_cast<unsigned int>(time(0)));
     const int SIZE=200;
     int array[SIZE];
