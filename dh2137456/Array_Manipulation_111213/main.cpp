@@ -1,7 +1,7 @@
 /*
   Dr. Mark E. Lehr
   November 18th, 2013
-  Array Manipulation
+  Array Manip
 */
 
 //Libraries
