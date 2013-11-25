@@ -1,8 +1,7 @@
 /*
-Dr. Mark E. Lehr (Edited by Jazmine Crane)
-November 25th, 2013
-Sorting Functions
-
+  Jared Stillinger
+  November 25th, 2013
+  Sorting Functions
 */
 
 //Libraries
@@ -14,9 +13,9 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-void filArry(int [],int [],int);
+void filArry(int [],int [], int);
 void prntAry(int [],int,int);
-void prntAry(int [],int [],int,int);
+void prntAry(int [],int[],int,int);
 void swap(int &,int &);
 void sortPos(int [],int [],int,int);
 void markSort(int [],int [],int);
@@ -63,19 +62,19 @@ void swap(int &a,int &b){
      b=temp;
 }
 
-void prntAry(int a[],int n,int perLine){
+void prntAry(int a[],int indx[],int n,int perLine){
      cout<<endl;
      for(int i=0;i<n;i++){
-          cout<<a[i]<<" ";
+          cout<<a[indx[i]]<<" ";
           if(i%perLine==(perLine-1))cout<<endl;
      }
      cout<<endl;
 }
 
-void prntAry(int a[],int indx[],int n,int perLine){
+void prntAry(int a[],int n,int perLine){
      cout<<endl;
      for(int i=0;i<n;i++){
-          cout<<a[indx[i]]<<" ";
+          cout<<a[i]<<" ";
           if(i%perLine==(perLine-1))cout<<endl;
      }
      cout<<endl;
@@ -87,3 +86,9 @@ void filArry(int a[],int indx[],int n){
           indx[i]=i;
      }
 }
+
+
+
+
+
+

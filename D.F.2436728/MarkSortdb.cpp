@@ -1,8 +1,7 @@
 /*
-Dr. Mark E. Lehr (Edited by Jazmine Crane)
-November 25th, 2013
-Sorting Functions
-
+  Dr. Mark E. Lehr
+  November 25th, 2013
+  Sorting Functions
 */
 
 //Libraries
@@ -87,3 +86,6 @@ void filArry(int a[],int indx[],int n){
           indx[i]=i;
      }
 }
+
+
+

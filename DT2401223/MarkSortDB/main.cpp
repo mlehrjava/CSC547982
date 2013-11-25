@@ -1,8 +1,7 @@
 /*
-Dr. Mark E. Lehr (Edited by Jazmine Crane)
-November 25th, 2013
-Sorting Functions
-
+  Dr. Mark E. Lehr
+  November 25th, 2013
+  Sorting Functions
 */
 
 //Libraries
@@ -18,8 +17,8 @@ void filArry(int [],int [],int);
 void prntAry(int [],int,int);
 void prntAry(int [],int [],int,int);
 void swap(int &,int &);
-void sortPos(int [],int [],int,int);
-void markSort(int [],int [],int);
+void sortPos(int [],int [],int, int);
+void markSort(int [],int [], int);
 
 int main(int argc, char *argv[]){
     //Declare variables and initialize the
@@ -87,3 +86,9 @@ void filArry(int a[],int indx[],int n){
           indx[i]=i;
      }
 }
+
+
+
+
+
+
