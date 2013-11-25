@@ -16,9 +16,7 @@ using namespace std;
 void filArry(int *,int);
 void prntAry(int *,int,int);
 void swap1(int *,int *);
-void swap2(int &,int &);
-void swap3(int,int,int);
-void copy(int *,int *,int);
+int * copy(int *,int);
 void sortPos(int *,int,int);
 void markSort(int *,int);
 
@@ -64,17 +62,6 @@ void copy(int *a,int *b,int n){
      }
 }
 
-void swap3(int *a,int pos1,int pos2){
-     int temp=a[pos1];
-     a[pos1]=a[pos2];
-     a[pos2]=temp;
-}
-
-void swap2(int &a,int &b){
-     a=a^b;
-     b=a^b;
-     a=a^b;
-}
 
 void swap1(int &a,int &b){
      int temp=*a;
