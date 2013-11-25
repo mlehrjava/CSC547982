@@ -13,14 +13,14 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-void filArry(int [],int);
-void prntAry(int [],int,int);
-void swap1(int &,int &);
+void filArry(int *,int);
+void prntAry(int *,int,int);
+void swap1(int *,int *);
 void swap2(int &,int &);
-void swap3(int [],int,int);
-void copy(int [],int [],int);
-void sortPos(int [],int,int);
-void markSort(int [],int);
+void swap3(int,int,int);
+void copy(int *,int *,int);
+void sortPos(int *,int,int);
+void markSort(int *,int);
 
 int main(int argc, char *argv[]){
     //Declare variables and initialize the
@@ -52,19 +52,19 @@ void markSort(int a[],int n){
 void sortPos(int a[],int n,int pos){
      if(pos>n-1)return;
      for(int i=pos+1;i<n;i++){
-          //if(a[pos]>a[i])swap1(a[pos],a[i]);
-          //if(a[pos]>a[i])swap2(a[pos],a[i]);
-          if(a[pos]>a[i])swap3(a,pos,i);
+          if(a[pos]>a[i])swap1(a[pos],a[i]);
+          //if(a[pos]>a[i])swap2(&*[pos],&*[i]);
+          //(a[pos]>a[i])swap1(a[pos],a[i]);
      }
 }
 
-void copy(int a[],int b[],int n){
+void copy(int *a,int *b,int n){
      for(int i=0;i<n;i++){
           b[i]=a[i];
      }
 }
 
-void swap3(int a[],int pos1,int pos2){
+void swap3(int *a,int pos1,int pos2){
      int temp=a[pos1];
      a[pos1]=a[pos2];
      a[pos2]=temp;
@@ -77,12 +77,12 @@ void swap2(int &a,int &b){
 }
 
 void swap1(int &a,int &b){
-     int temp=a;
-     a=b;
-     b=temp;
+     int temp=*a;
+     *a=*b;
+     *b=temp;
 }
 
-void prntAry(int a[],int n,int perLine){
+void prntAry(int *a,int n,int perLine){
      cout<<endl;
      for(int i=0;i<n;i++){
           cout<<a[i]<<" ";
@@ -91,7 +91,7 @@ void prntAry(int a[],int n,int perLine){
      cout<<endl;
 }
 
-void filArry(int a[],int n){
+void filArry(int *a,int n){
      for(int i=0;i<n;i++){
           a[i]=rand()%900+100;
      }
