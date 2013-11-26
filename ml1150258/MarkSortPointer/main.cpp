@@ -13,8 +13,8 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-void filArry(int *,int);
-void prntAry(int *,int,int);
+void filArry(int [],int);
+void prntAry(int [],int,int);
 void swap(int *,int *);
 void copy(int *,int *,int);
 void sortPos(int *,int,int);
