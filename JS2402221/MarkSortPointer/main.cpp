@@ -1,5 +1,5 @@
 /*
-  Jared Stillinger
+  Dr. Mark E. Lehr
   November 25th, 2013
   Sorting Functions
 */
@@ -13,14 +13,14 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-void filArry(int *,int);
-void prntAry(int *,int,int);
+void filArry(int [],int);
+void prntAry(int [],int,int);
 void swap(int *,int *);
 void copy(int *,int *,int);
 void sortPos(int *,int,int);
 void markSort(int *,int);
 
-int main(int argc, char *argv[]){
+int main(int argc, char **argv){
     //Declare variables and initialize the
     //random number seed
     const int SIZE=100;
@@ -50,22 +50,23 @@ void markSort(int *a,int n){
 void sortPos(int *a,int n,int pos){
      if(pos>n-1)return;
      for(int i=pos+1;i<n;i++){
-          //if(a[pos]>a[i])swap(a[pos],a[i]);
+          //if(a[pos]>a[i])swap(&a[pos],&a[i]);
           //if(a[pos]>a[i])swap(&*(a+pos),&*(a+i));
           if(a[pos]>a[i])swap((a+pos),(a+i));
      }
 }
 
-void copy(int *a,int *b,int n){
-     for(int i=0;i<n;i++){
-          *(b+i)=*(a+i);
-     }
-}
 
 void swap(int *a,int *b){
      int temp=*a;
      *a=*b;
      *b=temp;
+}
+
+void copy(int *a,int *c,int n){
+     for(int i=0;i<n;i++){
+             *(c+i)=a[i];
+     }
 }
 
 void prntAry(int *a,int n,int perLine){
@@ -83,4 +84,3 @@ void filArry(int *a,int n){
           *(a+i)=rand()%900+100;
      }
 }
-
