@@ -52,7 +52,7 @@ void markSort(int *a,int *indx,int n){
 void sortPos(int *a,int *indx,int n,int pos){
      if(pos>n-1)return;
      for(int i=pos+1;i<n;i++){
-          if(*(a+*(indx+pos))>*(a+*(indx+i)))swap(*(indx+pos),*(indx+i));
+          if(*(a+*(indx+pos))>*(a+*(indx+i)))swap(&*(indx+pos),&*(indx+i));
      }
 }
 
