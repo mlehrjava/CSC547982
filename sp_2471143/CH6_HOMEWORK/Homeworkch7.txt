@@ -1,0 +1,18 @@
+ch7&8 10 problems
+pg444 & pg487
+
+ch7
+pr1 -DONE
+pr2 -DONE
+pr3 -DONE
+pr4 -DONE
+pr8 -DONE
+pr9 -DONE
+pr11-DONE
+pr13-DONE
+
+ch8
+pr1-DONE
+pr2-DONE
+
+2*FlowChart-DONE
