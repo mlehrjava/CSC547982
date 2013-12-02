@@ -1,6 +1,7 @@
 /*
-  Dr. Mark E. Lehr
+  Guillermo Acuna
   November 18th, 2013
+  Modified by Guillermo Acuna on December 12th, 2013
 */
 
 //Libraries
@@ -19,6 +20,7 @@ void shift(int [],int,int,int);
 int  szOf(int [],int,int);
 int  delVal(int [],int,int,int);
 int  replce(int [],int,int,int);
+void adValue(int [],int);
 
 int main(int argc, char *argv[]){
     cout<<"Hello user\n";	
@@ -42,6 +44,8 @@ int main(int argc, char *argv[]){
         <<" times and replace it with 30"<<endl;
     //Print the Array
     prntAry(array,SIZE,10);
+    //Add value to the array
+    adValue(array,SIZE);
     //Exit stage Right
     system("PAUSE");
     return EXIT_SUCCESS;
@@ -112,7 +116,24 @@ void fillAry(int a[],int n){
      for(int i=0;i<n;i++){
              a[i]=rand()%90+10;
      }
-}     
+}
+
+//Add value to array
+void adValue(int aray [],int num){
+     //declare new array 
+     int newAry[num+1];
+     
+     //fill the new array with old array and add one value
+     for (int count=0;count<num;count++){
+          newAry[count]=aray[count];
+          
+     }
+     newAry[num]=rand()%90+10;
+     
+     //print new array
+     prntAry(newAry,num+1,10);
+
+}    
 
 
 
