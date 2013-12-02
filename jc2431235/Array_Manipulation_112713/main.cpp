@@ -1,7 +1,6 @@
 /*
-  Guillermo Acuna
+  Dr. Mark E. Lehr
   November 18th, 2013
-  Modified by Guillermo Acuna on December 12th, 2013
 */
 
 //Libraries
@@ -19,14 +18,14 @@ int  find(int [],int,int,int);
 void shift(int [],int,int,int);
 int  szOf(int [],int,int);
 int  delVal(int [],int,int,int);
+int *  delVal2(int [],int,int,int,int &);
 int  replce(int [],int,int,int);
-void adValue(int [],int);
+int *  addVal(int [],int,int,int,int &);
 
 int main(int argc, char *argv[]){
-    cout<<"Hello user\n";	
-	//Declare and initialize variables
+    //Declare and initialize variables
     srand(static_cast<unsigned int>(time(0)));
-    const int SIZE=200;
+    const int SIZE=400;
     int array[SIZE];
     //Fill the Array
     fillAry(array,SIZE);
@@ -44,12 +43,30 @@ int main(int argc, char *argv[]){
         <<" times and replace it with 30"<<endl;
     //Print the Array
     prntAry(array,SIZE,10);
-    //Add value to the array
-    adValue(array,SIZE);
+	//Try the new DelVal and print
+	int *dArray=delVal2(array,sizeOf,65,-1,sizeOf);
+    prntAry(dArray,sizeOf,10);
+    //Add a value into the array and print
+	int *aArray=addVal(dArray,sizeOf,65,-1,sizeOf);
+    prntAry(aArray,sizeOf,10);    
     //Exit stage Right
+	delete [] dArray;
     system("PAUSE");
     return EXIT_SUCCESS;
 }
+
+int *  addVal(int a[],int n,int value,int vInsrt,int &size){
+    //Find and delete
+	size=delVal(a,n,value,vInsrt)+1;
+    int *b=new int[size];
+	//Fill the new array with the values
+	for(int i=0;i<size;i++){
+		b[i]=a[i];
+	}
+	b[size-1]=rand()% 100;
+	return b;
+}
+
 
 int  replce(int a[],int n,int vf,int vr){
      //Count how many replaced
@@ -61,6 +78,17 @@ int  replce(int a[],int n,int vf,int vr){
           }
      }
      return cnt;
+}
+
+int *  delVal2(int a[],int n,int value,int vInsrt,int &size){
+    //Find and delete
+	size=delVal(a,n,value,vInsrt);
+    int *b=new int[size];
+	//Fill the new array with the values
+	for(int i=0;i<size;i++){
+		b[i]=a[i];
+	}
+	return b;
 }
 
 int  delVal(int a[],int n,int value,int vInsrt){
@@ -116,24 +144,7 @@ void fillAry(int a[],int n){
      for(int i=0;i<n;i++){
              a[i]=rand()%90+10;
      }
-}
-
-//Add value to array
-void adValue(int aray [],int num){
-     //declare new array 
-     int newAry[num+1];
-     
-     //fill the new array with old array and add one value
-     for (int count=0;count<num;count++){
-          newAry[count]=aray[count];
-          
-     }
-     newAry[num]=rand()%90+10;
-     
-     //print new array
-     prntAry(newAry,num+1,10);
-
-}    
+}     
 
 
 
