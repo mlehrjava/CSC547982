@@ -4,4 +4,4 @@ width:96
 height:45
 
 
-This program is coded by Qt Creator
+This program is coded with Qt Creator
